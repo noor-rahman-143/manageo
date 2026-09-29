@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+  --color-elevated: var(--elevated);
+  --color-elevated-foreground: var(--elevated-foreground);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-danger: var(--danger);
+  --color-danger-foreground: var(--danger-foreground);
+  
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-focus: var(--focus);
+  --color-disabled: var(--disabled);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Stitch Custom Colors */
+  --color-tertiary-fixed-dim: #c8a0f0;
+  --color-on-primary: #001f2e;
+  --color-surface-container-highest: #202c42;
+  --color-on-secondary: #001f2e;
+  --color-error: #ff6b6b;
+  --color-primary-container: #0e4d6e;
+  --color-secondary-fixed: #c0d8e8;
+  --color-surface-container-high: #1a2438;
+  --color-secondary-container: #1a3a4e;
+  --color-stitch-background: #0a0e1a;
+  --color-tertiary-container: #3d2060;
+  --color-on-tertiary-fixed: #1a002e;
+  --color-outline-variant: #2a3a48;
+  --color-on-primary-container: #c8eaff;
+  --color-surface-bright: #1a2438;
+  --color-on-tertiary-container: #e8d0ff;
+  --color-on-primary-fixed-variant: #004d73;
+  --color-on-surface: #e0e8f0;
+  --color-stitch-surface: #0f1524;
+  --color-surface-container-low: #111828;
+  --color-surface-variant: #1a2438;
+  --color-on-tertiary-fixed-variant: #4d2a73;
+  --color-stitch-primary: #7dd3fc;
+  --color-stitch-outline: #4a6070;
+  --color-tertiary: #c8a0f0;
+  --color-on-error: #1a0000;
+  --color-secondary-fixed-dim: #88b4cc;
+  --color-on-surface-variant: #a0b4c4;
+  --color-tertiary-fixed: #e8d0ff;
+  --color-on-error-container: #ffb3b3;
+  --color-on-primary-fixed: #001f2e;
+  --color-surface-container: #141c2e;
+  --color-on-secondary-fixed-variant: #2a4a5e;
+  --color-primary-fixed: #c8eaff;
+  --color-on-tertiary: #1a002e;
+  --color-on-secondary-container: #c0d8e8;
+  --color-inverse-on-surface: #0a0e1a;
+  --color-surface-dim: #0f1524;
+  --color-inverse-primary: #0a4c6e;
+  --color-inverse-surface: #e0e8f0;
+  --color-surface-container-lowest: #0a0e1a;
+  --color-error-container: #3d1414;
+  --color-surface-tint: #7dd3fc;
+  --color-on-background: #e0e8f0;
+  --color-stitch-secondary: #88b4cc;
+  --color-primary-fixed-dim: #7dd3fc;
+  --color-on-secondary-fixed: #0d1f2b;
+}
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #09090b;
+    --surface: #f4f4f5;
+    --surface-foreground: #18181b;
+    --elevated: #ffffff;
+    --elevated-foreground: #09090b;
+    
+    --primary: #4f46e5;
+    --primary-foreground: #ffffff;
+    --secondary: #e0e7ff;
+    --secondary-foreground: #312e81;
+    
+    --muted: #f4f4f5;
+    --muted-foreground: #71717a;
+    
+    --success: #16a34a;
+    --success-foreground: #ffffff;
+    --warning: #f59e0b;
+    --warning-foreground: #ffffff;
+    --danger: #ef4444;
+    --danger-foreground: #ffffff;
+    
+    --border: #e4e4e7;
+    --input: #e4e4e7;
+    --focus: #2563eb;
+    --disabled: #a1a1aa;
+  }
+
+  .dark {
+    --background: #09090b;
+    --foreground: #fafafa;
+    --surface: #18181b;
+    --surface-foreground: #fafafa;
+    --elevated: #27272a;
+    --elevated-foreground: #fafafa;
+    
+    --primary: #818cf8;
+    --primary-foreground: #09090b;
+    --secondary: #312e81;
+    --secondary-foreground: #e0e7ff;
+    
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+    
+    --success: #22c55e;
+    --success-foreground: #09090b;
+    --warning: #fbbf24;
+    --warning-foreground: #09090b;
+    --danger: #f87171;
+    --danger-foreground: #09090b;
+    
+    --border: #27272a;
+    --input: #27272a;
+    --focus: #3b82f6;
+    --disabled: #52525b;
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom Scrollbar for a premium feel */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--muted-foreground);
+  }
+
+  /* Prevent horizontal scrolling */
+  html {
+    overflow-x: hidden;
+    /* Ensure background color fills the entire viewport including safe areas */
+    background-color: #09090b;
+  }
+
+  body {
+    overflow-x: hidden;
+    /* Momentum scrolling on iOS for scrollable children */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  @media (max-width: 768px) {
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    * {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  }
+
+  /* Scrollable containers: native momentum scrolling on iOS */
+  .overflow-y-auto,
+  .overflow-y-scroll {
+    -webkit-overflow-scrolling: touch;
+  }
+}
